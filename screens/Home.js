@@ -8,6 +8,7 @@ import {
   Dimensions,
   ScrollView,
 } from 'react-native';
+import CurrentTopic from '../components/CurrentTopic';
 
 import {data} from './data';
 
@@ -18,7 +19,7 @@ const ITEM_HEIGHT = ITEM_WIDTH * 0.9;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#0f0f0f',
+      backgroundColor: 'white',
     },
     contentContainer: {
       marginTop: 50,
@@ -50,7 +51,7 @@ const Home = () => {
     return (
       <View style={styles.container}>
         <View style={styles.contentContainer}>
-          <Text style={styles.title}>Home</Text>
+      
         </View>
   
         {/* Scrollable Content */}
@@ -61,14 +62,8 @@ const Home = () => {
               styles.scrollContentContainer,
               {paddingBottom: tabBarheight},
             ]}>
-            {data.map((item) => (
-              <View key={item.id} style={styles.imageContainer}>
-                <Image
-                  style={styles.imageCard}
-                  resizeMode="cover"
-                />
-              </View>
-            ))}
+            <CurrentTopic/>
+          
           </ScrollView>
         </View>
       </View>
