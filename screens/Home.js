@@ -7,8 +7,10 @@ import {
   Image,
   Dimensions,
   ScrollView,
+  Button,
 } from 'react-native';
 import CurrentTopic from '../components/CurrentTopic';
+import { getPopUpSign } from '../misc/Firebase';
 
 import {data} from './data';
 
@@ -53,6 +55,7 @@ const Home = () => {
         <View style={styles.contentContainer}>
       
         </View>
+        <Button title = "sign" onPress={() =>getPopUpSign()}></Button>
   
         {/* Scrollable Content */}
         <View style={styles.scrollContainer}>
